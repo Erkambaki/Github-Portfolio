@@ -3,46 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Advanced Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>My Portfolio</h1>
-        <nav>
+    <header id="header">
+        <nav class="sticky-nav">
             <ul>
-                <li><a href="#about">About Me</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>This is a brief paragraph about me. Here, you can talk about your professional background, your skills, and what you're passionate about.</p>
+    <div class="intro">
+        <h1 class="animate-text">Hello, I'm [Your Name]</h1>
+        <p class="animate-text">I'm a [Your Profession]. Welcome to my portfolio!</p>
+    </div>
+
+    <section id="about" class="container">
+        <!-- Your about section -->
     </section>
 
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project">
-            <h3>Project Title 1</h3>
-            <p>Description of Project 1. This section should outline what the project is about, the technologies used, and the role you played in it.</p>
+    <section id="projects" class="container">
+        <div class="project-card" onmouseover="hoverEffect(this)" onmouseout="hoverEffectOut(this)">
+            <!-- Project details with hover effects -->
         </div>
-        <div class="project">
-            <h3>Project Title 2</h3>
-            <p>Description of Project 2. Similar to the first project, provide a concise overview of what this project entailed and your contributions.</p>
-        </div>
-        <!-- Add more projects as needed -->
+        <!-- More projects -->
     </section>
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Let's connect! You can reach me at <a href="mailto:your.email@example.com">your.email@example.com</a>.</p>
+    <section id="contact" class="container">
+        <!-- Contact form -->
     </section>
 
-    <footer>
-        <p>Copyright © Your Name. All Rights Reserved.</p>
-    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
