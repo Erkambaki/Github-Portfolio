@@ -30,7 +30,7 @@ Throughout my projects, I've gained experience with a broad range of technologie
 
 I'm always open to discussing new opportunities, collaborations, or just connecting to exchange ideas. Here's how you can reach me:
 
-- Email: [erkambaki@gmail.com]
+- Email: erkambaki@gmail.com
 - LinkedIn: [My LinkedIn](www.linkedin.com/in/bahadır-erkam)
 
 ## Acknowledgments
