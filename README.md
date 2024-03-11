@@ -10,11 +10,11 @@ Hi, I'm Bahadır Erkam, a Software Developer and Cyber Security Analyst. I have 
 
 Below is a list of highlighted projects included in this portfolio. Each project comes with its own README detailing the project's purpose, technologies used, and my personal contributions.
 
-- **Project 1 Name**: Short description. [Link to project](https://erkambaki.github.io/Github-Portfolio/)
-- **Project 2 Name**: Short description. [Link to project](https://erkambaki.github.io/Github-Portfolio/)
-- **Project 3 Name**: Short description. [Link to project](https://erkambaki.github.io/Github-Portfolio/)
-- **Project 3 Name**: Short description. [Link to project](https://erkambaki.github.io/Github-Portfolio/)
-- **Project 3 Name**: Short description. [Link to project](https://erkambaki.github.io/Github-Portfolio/)
+- **Hospital Management System**: Hospital management application with MySQL Xampp server system. [Link to project](https://erkambaki.github.io/Github-Portfolio/)
+- **Library Management Application**: Library management application with various sorting algortihms. [Link to project](https://erkambaki.github.io/Github-Portfolio/)
+- **Chess with AI MiniMax algorithm**: Chess with an AI opponent that uses MiniMax algorithm. [Link to project](https://erkambaki.github.io/Github-Portfolio/)
+- **Weather Prediction with Random Forest**: Weather prediction model with random forest AI algorithm. [Link to project](https://erkambaki.github.io/Github-Portfolio/)
+- **Regression and Classification AI Models**: Regression and Classification AI algorithms comparison. [Link to project](https://erkambaki.github.io/Github-Portfolio/)
 
 Feel free to browse through each project to see my work in action and understand the problems I've tackled.
 
@@ -22,18 +22,16 @@ Feel free to browse through each project to see my work in action and understand
 
 Throughout my projects, I've gained experience with a broad range of technologies, including:
 
-- Programming Languages: Python, JavaScript, Java, etc.
-- Frameworks and Libraries: React, Django, TensorFlow, etc.
-- Tools and Platforms: Git, Docker, AWS, etc.
-- ...add more as relevant.
+- Programming Languages: Python, JavaScript, Java
+- Frameworks and Libraries: React, Django, TensorFlow
+- Tools and Platforms: Git, Docker, AWS
 
 ## Contact Me
 
 I'm always open to discussing new opportunities, collaborations, or just connecting to exchange ideas. Here's how you can reach me:
 
-- Email: [Your Email]
-- LinkedIn: [Your LinkedIn](#)
-- Twitter: [Your Twitter](#)
+- Email: [erkambaki@gmail.com]
+- LinkedIn: [My LinkedIn](www.linkedin.com/in/bahadır-erkam)
 
 ## Acknowledgments
 
