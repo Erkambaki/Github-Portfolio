@@ -1,39 +1,36 @@
-# Bahadır Erkam's Portfolio
+# Bahadır Erkam
 
-Welcome to my portfolio repository! Here, you'll find a collection of projects showcasing my skills, achievements, and growth as a developer/engineer. This portfolio is designed to give you a comprehensive overview of my technical capabilities and project experiences.
+Backend-leaning full-stack developer — C#/.NET, Node.js and SQL.
 
-## Introduction
+**[View the live site →](https://erkambaki.github.io/Github-Portfolio/)**
 
-Hi, I'm Bahadır Erkam, a Software Developer and Cyber Security Analyst. I have a passion for building responsive web applications and developing machine learning models. This portfolio is a curated collection of my work, demonstrating my journey and the milestones I've achieved in my career so far.
+## About
 
-## Projects Overview
+I'm a full-stack developer with a lean toward the backend — the part of the stack where correctness, data integrity and clean APIs matter most. Most of my recent work sits across **C#/.NET**, **Node.js** and **SQL**, building the kind of applications that manage real records: case tasks, vehicle telemetry, patient and library data.
 
-Below is a list of highlighted projects included in this portfolio. Each project comes with its own README detailing the project's purpose, technologies used, and my personal contributions.
+## Projects
 
-- **Hospital Management System**: Hospital management application with MySQL Xampp server system. [Link to project](https://erkambaki.github.io/Github-Portfolio/)
-- **Library Management Application**: Library management application with various sorting algortihms. [Link to project](https://erkambaki.github.io/Github-Portfolio/)
-- **Chess with AI MiniMax algorithm**: Chess with an AI opponent that uses MiniMax algorithm. [Link to project](https://erkambaki.github.io/Github-Portfolio/)
-- **Weather Prediction with Random Forest**: Weather prediction model with random forest AI algorithm. [Link to project](https://erkambaki.github.io/Github-Portfolio/)
-- **Regression and Classification AI Models**: Regression and Classification AI algorithms comparison. [Link to project](https://erkambaki.github.io/Github-Portfolio/)
-
-Feel free to browse through each project to see my work in action and understand the problems I've tackled.
+| Project | Domain | Stack |
+|---|---|---|
+| [HMCTS Case Task Manager](https://github.com/Erkambaki/HMCTS-Task) | Government | Node.js, Express, SQLite, React |
+| [Fleet Telemetry System](https://github.com/Erkambaki/Fleet-Telemetry-System) | Automotive / IoT | TypeScript, Node.js, Express, Vue 3, Vuetify |
+| [Hospital Management System](https://github.com/Erkambaki/Hospital-Management-System) | Healthcare | MySQL, XAMPP |
+| [Library Management Application](https://github.com/Erkambaki/Library-Management-Application) | Education | Sorting algorithms |
+| [Chess with MiniMax AI](https://github.com/Erkambaki/Chess-with-AI-MiniMax-algorithm) | Games / AI | MiniMax algorithm |
+| [Weather Prediction — Random Forest](https://github.com/Erkambaki/Weather-Prediction-with-Random-Forest) | Machine Learning | Random Forest |
+| [Regression & Classification Models](https://github.com/Erkambaki/Regression-and-Classification-AI-Models) | Machine Learning | Regression, Classification |
 
 ## Technologies
 
-Throughout my projects, I've gained experience with a broad range of technologies, including:
+- **Languages:** C#, JavaScript, TypeScript, SQL, Python
+- **Frameworks & runtime:** .NET, Node.js, Express, React, Vue 3
+- **Data:** SQL Server, MySQL, SQLite
+- **Tools:** Git, Docker, AWS
 
-- Programming Languages: Python, JavaScript, Java
-- Frameworks and Libraries: React, Django, TensorFlow
-- Tools and Platforms: Git, Docker, AWS
+## Contact
 
-## Contact Me
+Get in touch if you want to talk shop, collaborate on something, or just say hi.
 
-I'm always open to discussing new opportunities, collaborations, or just connecting to exchange ideas. Here's how you can reach me:
-
-- Email: erkambaki@gmail.com
-- LinkedIn: [My LinkedIn](https://www.linkedin.com/in/bahad%C4%B1r-erkam/)
-
-## Acknowledgments
-
-- A special thank you to everyone who supported me through my journey.
-- Mentors, peers, and anyone else who contributed directly or indirectly to my growth and the projects showcased here.
+- Email: [erkambaki@gmail.com](mailto:erkambaki@gmail.com)
+- LinkedIn: [linkedin.com/in/bahadır-erkam](https://www.linkedin.com/in/bahad%C4%B1r-erkam/)
+- GitHub: [github.com/Erkambaki](https://github.com/Erkambaki)
