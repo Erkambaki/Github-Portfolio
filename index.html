@@ -1,92 +1,588 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bahadır Erkam's Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        .header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-        }
-        .projects-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            padding: 20px;
-        }
-        .project {
-            background-color: #fff;
-            margin: 10px;
-            padding: 20px;
-            width: 300px;
-            box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
-        }
-        .project img {
-            width: 100%;
-            height: auto;
-        }
-        .project h3 {
-            margin-top: 0;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bahadır Erkam — Backend-leaning Full-Stack Developer</title>
+<meta name="description" content="Portfolio of Bahadır Erkam, a backend-leaning full-stack developer working across C#/.NET, Node.js and SQL.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#12151b;
+    --surface:#191d25;
+    --surface-2:#1f2530;
+    --border:#2a303c;
+    --text:#ece9e3;
+    --text-dim:#9098a8;
+    --text-faint:#5c6472;
+    --accent:#e3b341;
+    --accent-2:#5fb4a2;
+    --font-mono:'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    --font-sans:'Inter', system-ui, -apple-system, "Segoe UI", sans-serif;
+    --maxw:1080px;
+  }
+
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; }
+  }
+
+  body{
+    margin:0;
+    background:var(--ink);
+    color:var(--text);
+    font-family:var(--font-sans);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  a{ color:inherit; }
+  ::selection{ background:var(--accent); color:#12151b; }
+
+  :focus-visible{
+    outline:2px solid var(--accent);
+    outline-offset:3px;
+    border-radius:2px;
+  }
+
+  .wrap{ max-width:var(--maxw); margin:0 auto; padding:0 24px; }
+
+  .eyebrow{
+    font-family:var(--font-mono);
+    font-size:12.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin:0 0 14px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:16px;
+    height:1px;
+    background:var(--accent);
+    display:inline-block;
+  }
+
+  /* ---------- nav ---------- */
+  header.nav{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:rgba(18,21,27,0.86);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--border);
+  }
+  header.nav .wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    height:64px;
+  }
+  .brand{
+    font-family:var(--font-mono);
+    font-weight:600;
+    font-size:15px;
+    letter-spacing:0.02em;
+    text-decoration:none;
+    color:var(--text);
+  }
+  .brand span{ color:var(--accent); }
+  nav.links{
+    display:flex;
+    align-items:center;
+    gap:28px;
+  }
+  nav.links a{
+    text-decoration:none;
+    font-size:14px;
+    color:var(--text-dim);
+    transition:color .15s ease;
+  }
+  nav.links a:hover{ color:var(--text); }
+  .nav-cta{
+    font-family:var(--font-mono);
+    font-size:13px;
+    color:var(--ink) !important;
+    background:var(--accent);
+    padding:8px 14px;
+    border-radius:4px;
+    text-decoration:none;
+    white-space:nowrap;
+  }
+  .nav-cta:hover{ background:#f0c25e; }
+  .menu-toggle{ display:none; }
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;
+    padding:96px 0 80px;
+    overflow:hidden;
+    border-bottom:1px solid var(--border);
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:radial-gradient(var(--border) 1px, transparent 1px);
+    background-size:26px 26px;
+    -webkit-mask-image:linear-gradient(to bottom, black, transparent 85%);
+    mask-image:linear-gradient(to bottom, black, transparent 85%);
+    opacity:0.55;
+    pointer-events:none;
+  }
+  .hero-inner{ position:relative; }
+  .hero h1{
+    font-family:var(--font-mono);
+    font-weight:600;
+    font-size:clamp(34px, 6vw, 58px);
+    line-height:1.05;
+    letter-spacing:-0.01em;
+    margin:0 0 10px;
+  }
+  .hero .role{
+    font-size:clamp(17px, 2.4vw, 21px);
+    color:var(--text-dim);
+    margin:0 0 34px;
+    max-width:560px;
+  }
+
+  .spec{
+    font-family:var(--font-mono);
+    font-size:13.5px;
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-left:3px solid var(--accent);
+    border-radius:6px;
+    padding:18px 20px;
+    max-width:460px;
+    margin:0 0 32px;
+  }
+  .spec dl{ margin:0; display:grid; grid-template-columns:auto 1fr; gap:9px 18px; }
+  .spec dt{ color:var(--text-faint); }
+  .spec dd{ margin:0; color:var(--text); }
+
+  .hero-ctas{ display:flex; gap:12px; flex-wrap:wrap; }
+  .btn{
+    font-family:var(--font-sans);
+    font-weight:600;
+    font-size:14px;
+    text-decoration:none;
+    padding:11px 18px;
+    border-radius:5px;
+    border:1px solid var(--border);
+    color:var(--text);
+    transition:border-color .15s ease, background .15s ease;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+  }
+  .btn:hover{ border-color:var(--text-dim); background:var(--surface-2); }
+  .btn.primary{
+    background:var(--accent);
+    color:var(--ink);
+    border-color:var(--accent);
+  }
+  .btn.primary:hover{ background:#f0c25e; border-color:#f0c25e; }
+
+  /* ---------- sections ---------- */
+  section{ padding:72px 0; border-bottom:1px solid var(--border); }
+  section:last-of-type{ border-bottom:none; }
+  h2{
+    font-family:var(--font-sans);
+    font-weight:700;
+    font-size:clamp(22px, 3vw, 28px);
+    margin:0 0 20px;
+    letter-spacing:-0.01em;
+  }
+
+  .about p{
+    max-width:680px;
+    color:var(--text-dim);
+    font-size:16px;
+  }
+  .about p strong{ color:var(--text); font-weight:600; }
+
+  /* ---------- stack ---------- */
+  .stack-groups{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
+    gap:28px;
+    margin-top:8px;
+  }
+  .stack-group h3{
+    font-family:var(--font-mono);
+    font-size:12.5px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--text-faint);
+    margin:0 0 12px;
+    font-weight:500;
+  }
+  .chips{ display:flex; flex-wrap:wrap; gap:8px; }
+  .chip{
+    font-family:var(--font-mono);
+    font-size:12.5px;
+    color:var(--text-dim);
+    border:1px solid var(--border);
+    padding:5px 10px;
+    border-radius:4px;
+    background:var(--surface);
+  }
+
+  /* ---------- projects ---------- */
+  .project-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(300px, 1fr));
+    gap:18px;
+    margin-top:8px;
+  }
+  .card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:22px;
+    display:flex;
+    flex-direction:column;
+    transition:border-color .15s ease, transform .15s ease;
+  }
+  .card:hover{ border-color:var(--accent-2); transform:translateY(-2px); }
+  .card .domain{
+    font-family:var(--font-mono);
+    font-size:11px;
+    letter-spacing:0.09em;
+    text-transform:uppercase;
+    color:var(--accent-2);
+    margin-bottom:10px;
+  }
+  .card h3{
+    font-size:17px;
+    margin:0 0 8px;
+    font-weight:700;
+  }
+  .card p{
+    font-size:14px;
+    color:var(--text-dim);
+    margin:0 0 16px;
+    flex-grow:1;
+  }
+  .card .chips{ margin-bottom:16px; }
+  .card .chip{ font-size:11.5px; padding:4px 9px; }
+  .card a.repo-link{
+    font-family:var(--font-mono);
+    font-size:13px;
+    color:var(--text);
+    text-decoration:none;
+    border-top:1px solid var(--border);
+    padding-top:14px;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+  }
+  .card a.repo-link:hover{ color:var(--accent); }
+  .card a.repo-link svg{ width:12px; height:12px; }
+
+  /* ---------- contact ---------- */
+  .contact-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    flex-wrap:wrap;
+    gap:24px;
+  }
+  .contact p{ color:var(--text-dim); max-width:460px; margin:0; }
+  .contact-links{ display:flex; flex-direction:column; gap:10px; align-items:flex-start; }
+  .contact-links a{
+    font-family:var(--font-mono);
+    font-size:14.5px;
+    text-decoration:none;
+    color:var(--text);
+    border-bottom:1px solid transparent;
+  }
+  .contact-links a:hover{ color:var(--accent); border-color:var(--accent); }
+
+  footer{
+    padding:28px 0 40px;
+    font-family:var(--font-mono);
+    font-size:12px;
+    color:var(--text-faint);
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+
+  /* ---------- reveal ---------- */
+  .reveal{ opacity:0; transform:translateY(14px); transition:opacity .5s ease, transform .5s ease; }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 720px){
+    nav.links{ display:none; }
+    .contact-inner{ align-items:flex-start; }
+  }
+</style>
 </head>
 <body>
 
-    <div class="header">
-        <h1>Bahadır Erkam's Portfolio</h1>
-        <p>Welcome to my GitHub portfolio. Here are some of my projects.</p>
+<header class="nav">
+  <div class="wrap">
+    <a href="#top" class="brand">erkam<span>.dev</span></a>
+    <nav class="links">
+      <a href="#about">About</a>
+      <a href="#stack">Stack</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="nav-cta" href="mailto:erkambaki@gmail.com">Email me</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <h1>Bahadır Erkam</h1>
+      <p class="role">Backend-leaning full-stack developer — C#/.NET, Node.js and SQL, currently building for the web and courts alike.</p>
+
+      <div class="spec">
+        <dl>
+          <dt>role</dt><dd>Full-stack developer, backend-leaning</dd>
+          <dt>stack</dt><dd>C# · .NET · Node.js · SQL</dd>
+          <dt>focus</dt><dd>Reliable APIs &amp; structured data</dd>
+        </dl>
+      </div>
+
+      <div class="hero-ctas">
+        <a class="btn primary" href="mailto:erkambaki@gmail.com">Email me</a>
+        <a class="btn" href="https://github.com/Erkambaki" target="_blank" rel="noopener">GitHub ↗</a>
+        <a class="btn" href="https://www.linkedin.com/in/bahad%C4%B1r-erkam/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
     </div>
+  </section>
 
-    <div class="projects-container">
-        <!-- Project 1 -->
-        <div class="project">
-            <img src="Images/Hospital Management System.jpeg" alt="Project 1 screenshot">
-            <h3>Hospital Management System</h3>
-            <p>Hospital management application with MySQL Xampp server system</p>
-            <a href="https://github.com/Erkambaki/Hospital-Management-System">View on GitHub</a>
-        </div>
-
-        <!-- Project 2 -->
-        <div class="project">
-            <img src="Images/Library Management Application.jpeg" alt="Project 2 screenshot">
-            <h3>Library Management Application</h3>
-            <p>Library management application with various sorting algortihms</p>
-            <a href="https://github.com/Erkambaki/Library-Management-Application">View on GitHub</a>
-        </div>
-
-        <!-- Project 3 -->
-        <div class="project">
-            <img src="Images/Chess with AI MiniMax algorithm.jpeg" alt="Project 3 screenshot">
-            <h3>Chess with AI MiniMax algorithm</h3>
-            <p>Chess with an AI opponent that uses MiniMax algorithm</p>
-            <a href="https://github.com/Erkambaki/Chess-with-AI-MiniMax-algorithm">View on GitHub</a>
-        </div>
-     
-        <!-- Project 4 -->
-        <div class="project">
-            <img src="Images/Weather Prediction with Random Forest.jpeg" alt="Project 4 screenshot">
-            <h3>Weather Prediction with Random Forest</h3>
-            <p>Weather prediction model with random forest AI algorithm</p>
-            <a href="https://github.com/Erkambaki/Weather-Prediction-with-Random-Forest">View on GitHub</a>
-        </div>
-
-        <!-- Project 5 -->
-        <div class="project">
-            <h3>Regression and Classification AI Models</h3>
-            <p>Regression and Classification AI algorithms comparison</p>
-            <a href="https://github.com/Erkambaki/Regression-and-Classification-AI-Models">View on GitHub</a>
-        </div>
-
+  <section id="about" class="reveal">
+    <div class="wrap">
+      <p class="eyebrow">About</p>
+      <h2>Systems that hold up under real use</h2>
+      <p>
+        I'm a full-stack developer with a lean toward the backend — the part of the
+        stack where correctness, data integrity and clean APIs matter most. Most of
+        my recent work sits across <strong>C#/.NET</strong>, <strong>Node.js</strong>
+        and <strong>SQL</strong>, building the kind of applications that manage real
+        records: case tasks, vehicle telemetry, patient and library data.
+      </p>
     </div>
+  </section>
+
+  <section id="stack" class="reveal">
+    <div class="wrap">
+      <p class="eyebrow">Stack</p>
+      <h2>Tools I reach for</h2>
+      <div class="stack-groups">
+        <div class="stack-group">
+          <h3>Languages</h3>
+          <div class="chips">
+            <span class="chip">C#</span>
+            <span class="chip">JavaScript</span>
+            <span class="chip">TypeScript</span>
+            <span class="chip">SQL</span>
+            <span class="chip">Python</span>
+          </div>
+        </div>
+        <div class="stack-group">
+          <h3>Frameworks &amp; runtime</h3>
+          <div class="chips">
+            <span class="chip">.NET</span>
+            <span class="chip">Node.js</span>
+            <span class="chip">Express</span>
+            <span class="chip">React</span>
+            <span class="chip">Vue 3</span>
+          </div>
+        </div>
+        <div class="stack-group">
+          <h3>Data</h3>
+          <div class="chips">
+            <span class="chip">SQL Server</span>
+            <span class="chip">MySQL</span>
+            <span class="chip">SQLite</span>
+          </div>
+        </div>
+        <div class="stack-group">
+          <h3>Tools</h3>
+          <div class="chips">
+            <span class="chip">Git</span>
+            <span class="chip">Docker</span>
+            <span class="chip">AWS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="reveal">
+    <div class="wrap">
+      <p class="eyebrow">Projects</p>
+      <h2>Selected work</h2>
+
+      <div class="project-grid">
+
+        <div class="card">
+          <div class="domain">Government</div>
+          <h3>HMCTS Case Task Manager</h3>
+          <p>A full-stack coding challenge built for an HMCTS developer application — an Express/SQLite API paired with a React front end styled to HMCTS design patterns.</p>
+          <div class="chips">
+            <span class="chip">Node.js</span>
+            <span class="chip">Express</span>
+            <span class="chip">SQLite</span>
+            <span class="chip">React</span>
+          </div>
+          <a class="repo-link" href="https://github.com/Erkambaki/HMCTS-Task" target="_blank" rel="noopener">
+            View on GitHub
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          </a>
+        </div>
+
+        <div class="card">
+          <div class="domain">Automotive / IoT</div>
+          <h3>Fleet Telemetry System</h3>
+          <p>A telemetry platform built for a technical assignment — a TypeScript/Express API ingesting simulated vehicle data, visualised through a Vue 3 + Vuetify dashboard.</p>
+          <div class="chips">
+            <span class="chip">TypeScript</span>
+            <span class="chip">Node.js</span>
+            <span class="chip">Express</span>
+            <span class="chip">Vue 3</span>
+            <span class="chip">Vuetify</span>
+          </div>
+          <a class="repo-link" href="https://github.com/Erkambaki/Fleet-Telemetry-System" target="_blank" rel="noopener">
+            View on GitHub
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          </a>
+        </div>
+
+        <div class="card">
+          <div class="domain">Healthcare</div>
+          <h3>Hospital Management System</h3>
+          <p>A hospital management application backed by a MySQL database, run on a local XAMPP server stack.</p>
+          <div class="chips">
+            <span class="chip">MySQL</span>
+            <span class="chip">XAMPP</span>
+          </div>
+          <a class="repo-link" href="https://github.com/Erkambaki/Hospital-Management-System" target="_blank" rel="noopener">
+            View on GitHub
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          </a>
+        </div>
+
+        <div class="card">
+          <div class="domain">Education</div>
+          <h3>Library Management Application</h3>
+          <p>A library catalogue and lending system exploring several classic sorting algorithms for search and ordering.</p>
+          <div class="chips">
+            <span class="chip">Sorting Algorithms</span>
+          </div>
+          <a class="repo-link" href="https://github.com/Erkambaki/Library-Management-Application" target="_blank" rel="noopener">
+            View on GitHub
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          </a>
+        </div>
+
+        <div class="card">
+          <div class="domain">Games / AI</div>
+          <h3>Chess with MiniMax AI</h3>
+          <p>A chess game with an AI opponent driven by the MiniMax algorithm, evaluating board states to pick its next move.</p>
+          <div class="chips">
+            <span class="chip">MiniMax</span>
+            <span class="chip">Game AI</span>
+          </div>
+          <a class="repo-link" href="https://github.com/Erkambaki/Chess-with-AI-MiniMax-algorithm" target="_blank" rel="noopener">
+            View on GitHub
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          </a>
+        </div>
+
+        <div class="card">
+          <div class="domain">Machine Learning</div>
+          <h3>Weather Prediction — Random Forest</h3>
+          <p>A weather prediction model built around a Random Forest algorithm, trained on historical weather data.</p>
+          <div class="chips">
+            <span class="chip">Random Forest</span>
+            <span class="chip">Machine Learning</span>
+          </div>
+          <a class="repo-link" href="https://github.com/Erkambaki/Weather-Prediction-with-Random-Forest" target="_blank" rel="noopener">
+            View on GitHub
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          </a>
+        </div>
+
+        <div class="card">
+          <div class="domain">Machine Learning</div>
+          <h3>Regression &amp; Classification Models</h3>
+          <p>A side-by-side comparison of regression and classification algorithms on the same dataset, weighing accuracy and tradeoffs.</p>
+          <div class="chips">
+            <span class="chip">Regression</span>
+            <span class="chip">Classification</span>
+          </div>
+          <a class="repo-link" href="https://github.com/Erkambaki/Regression-and-Classification-AI-Models" target="_blank" rel="noopener">
+            View on GitHub
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="reveal">
+    <div class="wrap contact-inner">
+      <div>
+        <p class="eyebrow">Contact</p>
+        <h2>Let's talk</h2>
+        <p>Get in touch if you want to talk shop, collaborate on something, or just say hi.</p>
+      </div>
+      <div class="contact-links">
+        <a href="mailto:erkambaki@gmail.com">erkambaki@gmail.com</a>
+        <a href="https://www.linkedin.com/in/bahad%C4%B1r-erkam/" target="_blank" rel="noopener">linkedin.com/in/bahadır-erkam</a>
+        <a href="https://github.com/Erkambaki" target="_blank" rel="noopener">github.com/Erkambaki</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap" style="display:flex; justify-content:space-between; width:100%; flex-wrap:wrap; gap:10px;">
+    <span>© <span id="year"></span> Bahadır Erkam</span>
+    <span>Built with plain HTML, CSS &amp; JS — no framework.</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var reveals = document.querySelectorAll('.reveal');
+
+  if (prefersReduced || !('IntersectionObserver' in window)) {
+    reveals.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(function(el){ io.observe(el); });
+  }
+</script>
 
 </body>
 </html>
